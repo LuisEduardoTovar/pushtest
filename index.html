@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Notificaciones Push V.1</title>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <title>Notificaciones Push V1</title>
 
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "98ff99e2-404c-49eb-ba85-3cb5a83ec8f9",
-    });
-  });
-</script>
+    <!-- SDK correcto -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "98ff99e2-404c-49eb-ba85-3cb5a83ec8f9",
+        });
+      });
+    </script>
 </head>
 <body>
     <h1>Notificaciones Push</h1>
-    <p>Si te pide permiso para activar notificaciones, ya funciona.</p>
+    <p>Si te aparece la solicitud de permisos, ya funciona.</p>
 </body>
 </html>
-
